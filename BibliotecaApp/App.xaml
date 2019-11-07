@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BibliotecaApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--ESTILOS PERSONALIZADOS PROPIOS PARA NO AGREARLOS EN TODOS LOS ELEMENTOS-->
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Margin" Value="15"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="BackgroundColor" Value="#4D73FF"/>
+
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="10,10"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="BibliotecaApp.Views.MainPage"
+             Title="Libros"
+             xmlns:ViewModel="clr-namespace:BibliotecaApp.ViewModels"
+             >
+    <!--Texto en la barra de navegacion-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Nuevo" Command="{Binding newItemCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.BindingContext>
+        <ViewModel:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Aqui pongo una lista para mostrar los datos de todos los libros-->
+            <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Books}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding RefreshCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing}"
+                SelectedItem="{Binding BookSelected}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding BookName}"
+                                  Detail="{Binding Author}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

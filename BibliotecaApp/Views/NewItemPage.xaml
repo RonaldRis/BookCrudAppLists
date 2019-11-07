@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BibliotecaApp.Views.NewItemPage"
+             Title="New Item">
+    <!--Texto en la barra de navegacion-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding Update_Create}" Command="{Binding CreateOrUdateCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <!--Aqui pongo los datos del libro que se paso por constructores-->
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="Autor" FontSize="Medium" />
+            <Entry Text="{Binding BookCurrent.Author}" HorizontalOptions="Fill" />
+            <Label Text="Nombre del libro:" />
+            <Entry Text="{Binding BookCurrent.BookName}" HorizontalOptions="Fill" />
+            <Button x:Name="btnEliminar" Text="Eliminar" Command="{Binding EliminarCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
